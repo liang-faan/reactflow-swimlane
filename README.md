@@ -164,7 +164,6 @@ You will also see any lint errors in the console.
       "sourceNodeId": "S3-1-M1",
       "targetNodeId": "S3-2-M2"
     },
-    //
     {
       "id": "E-S3-2-M1-S3-3-M1",
       "sourceNodeId": "S3-2-M1",
