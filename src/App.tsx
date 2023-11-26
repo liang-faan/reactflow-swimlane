@@ -34,8 +34,8 @@ function App() {
             getOptionLabel={(option) => option.id}
             sx={{
               width: 600,
-              backgroundColor: "#fee00f",
-              color: "white",
+              backgroundColor: "#d2f6f6",
+              // color: "white",
               borderRadius: 2,
             }}
             renderInput={(params) => (

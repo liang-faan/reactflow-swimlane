@@ -339,6 +339,11 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         targetNodeId: "B4",
       },
       {
+        id: "edgeF12-B1",
+        sourceNodeId: "F2",
+        targetNodeId: "B1",
+      },
+      {
         id: "edge1-5",
         sourceNodeId: "A1",
         targetNodeId: "E5",

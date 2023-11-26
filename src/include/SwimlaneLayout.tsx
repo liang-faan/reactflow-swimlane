@@ -4,9 +4,9 @@ import { MarkerType, Node as ReactflowNode } from "reactflow";
 
 const nodeWidth = 140;
 const nodeHeight = 40;
-const rankSep = nodeWidth / 2;
-const nodeSep = rankSep / 2;
-const swimlaneSep = rankSep / 2;
+const rankSep = nodeWidth; //70
+const nodeSep = nodeWidth / 4; //35
+const swimlaneSep = rankSep / 4; //35
 const ranker = "network-complex";
 
 const convertSwimlaneNodesToReactflowNode = (
@@ -94,6 +94,66 @@ const createGraph = (
   };
 };
 
+const getNodesMaxXPosition = (nodes: any[]) => {
+  let maxWidth = 0;
+  nodes.forEach((n) => {
+    if (n.position.x > maxWidth) maxWidth = n.position.x;
+  });
+  return maxWidth + nodeWidth + rankSep;
+};
+
+const getNodesMaxYPosition = (nodes: any[]) => {
+  let maxHeight = 0;
+  nodes.forEach((n) => {
+    if (n.position.y > maxHeight) maxHeight = n.position.y;
+  });
+  return maxHeight + nodeHeight + rankSep;
+};
+
+const createSwimlaneNodes = (
+  rankDirection: string,
+  swimlaneFlowInputs: SwimlaneFlowInput,
+  maxXPosition: number,
+  maxYPosition: number
+) => {
+  const sortedSwimlanes = swimlaneFlowInputs.swimlanes.sort(
+    (s1, s2) => s1.layer - s2.layer
+  );
+
+  const swimlaneNodes = sortedSwimlanes.map((sw, index) => {
+    return {
+      id: sw.id,
+      data: {
+        label: sw.label,
+      },
+      draggable: false,
+      position: {
+        x:
+          rankDirection === "TB"
+            ? 0
+            : (nodeWidth + rankSep) * index + swimlaneSep / 2,
+        y: rankDirection === "TB" ? (nodeHeight + rankSep) * index : 0,
+      },
+      style: {
+        width:
+          rankDirection === "TB"
+            ? maxXPosition
+            : nodeWidth + rankSep - swimlaneSep,
+        height:
+          rankDirection === "TB"
+            ? nodeHeight + rankSep - swimlaneSep
+            : maxYPosition,
+        zIndex: -1,
+        boxShadow: "#000000",
+        borderRadius: "8px",
+        textAlign:
+          rankDirection === "TB" ? ("left" as const) : ("center" as const),
+      },
+    };
+  });
+  return swimlaneNodes;
+};
+
 const getGraphNodesEdges = (
   rankDirection: string,
   swimlaneFlowInputs: SwimlaneFlowInput
@@ -113,7 +173,17 @@ const getGraphNodesEdges = (
     return node;
   });
 
-  return { nodes: nodesWithPosition, edges: edges };
+  const maxXPosition = getNodesMaxXPosition(nodesWithPosition);
+  const maxYPosition = getNodesMaxYPosition(nodesWithPosition);
+
+  const swimLaneNodes = createSwimlaneNodes(
+    rankDirection,
+    swimlaneFlowInputs,
+    maxXPosition,
+    maxYPosition
+  );
+
+  return { nodes: nodesWithPosition.concat(swimLaneNodes), edges: edges };
 };
 
 export default getGraphNodesEdges;

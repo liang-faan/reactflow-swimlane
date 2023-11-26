@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #dbe4f7;
   min-height: 65px;
   height: 10vh;
   /* min-height: 100vh; */
@@ -43,15 +43,19 @@
 }
 
 .App-ViewPoint {
-  background-color: #282c34;
+  background-color: #dbe4f7;
   height: 80vh;
   position: relative;
 }
 
 .App-Footer {
-  background-color: #282c34;
+  background-color: #dbe4f7;
   height: 10vh;
   min-height: 65px;
-  color: aqua;
+  color: #515454;
   /* color: antiquewhite; */
+}
+
+.Panel-Button {
+  /* background-color: aquamarine; */
 }
