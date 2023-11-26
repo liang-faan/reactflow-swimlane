@@ -103,7 +103,7 @@ const getNodesMaxXPosition = (nodes: any[]) => {
   nodes.forEach((n) => {
     if (n.position.x > maxWidth) maxWidth = n.position.x;
   });
-  return maxWidth + nodeWidth + rankSep;
+  return maxWidth + nodeWidth + rankSep / 2;
 };
 
 const getNodesMaxYPosition = (nodes: any[]) => {
@@ -111,7 +111,7 @@ const getNodesMaxYPosition = (nodes: any[]) => {
   nodes.forEach((n) => {
     if (n.position.y > maxHeight) maxHeight = n.position.y;
   });
-  return maxHeight + nodeHeight + rankSep;
+  return maxHeight + nodeHeight + rankSep / 2;
 };
 
 const createSwimlaneNodes = (

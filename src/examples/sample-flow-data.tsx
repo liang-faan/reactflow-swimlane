@@ -370,5 +370,41 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
       },
     ],
   },
+  {
+    id: "Sample 2",
+    swimlanes: [
+      {
+        id: "S21",
+        layer: 0,
+        nodes: [
+          {
+            id: "S21-1",
+            name: "Node S211",
+            label: "Node S211",
+            code: "NODES211",
+          },
+        ],
+      },
+      {
+        id: "S22",
+        layer: 1,
+        nodes: [
+          {
+            id: "S22-1",
+            name: "Node S221",
+            label: "Node S221",
+            code: "NODES221",
+          },
+        ],
+      },
+    ],
+    edges: [
+      {
+        id: "S211-S221",
+        sourceNodeId: "S21-1",
+        targetNodeId: "S22-1",
+      },
+    ],
+  },
 ];
 export { SAMPLE_FLOW };
