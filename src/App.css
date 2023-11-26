@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #dbe4f7;
+  background-color: #053437;
   min-height: 65px;
   height: 10vh;
   /* min-height: 100vh; */
@@ -43,13 +43,13 @@
 }
 
 .App-ViewPoint {
-  background-color: #dbe4f7;
+  background-color: #053437;
   height: 80vh;
   position: relative;
 }
 
 .App-Footer {
-  background-color: #dbe4f7;
+  background-color: #053437;
   height: 10vh;
   min-height: 65px;
   color: #515454;

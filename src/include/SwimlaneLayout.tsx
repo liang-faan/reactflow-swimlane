@@ -7,7 +7,8 @@ const nodeHeight = 40;
 const rankSep = nodeWidth; //70
 const nodeSep = nodeWidth / 4; //35
 const swimlaneSep = rankSep / 4; //35
-const ranker = "network-complex";
+// const ranker = "network-complex";
+const ranker = "longest-path";
 
 const convertSwimlaneNodesToReactflowNode = (
   swimlaneFlowInputs: SwimlaneFlowInput
@@ -24,6 +25,9 @@ const convertSwimlaneNodesToReactflowNode = (
           },
           width: nodeWidth,
           height: nodeHeight,
+          style: {
+            borderRadius: "8px",
+          },
           layer: layer,
         };
       });
@@ -146,6 +150,9 @@ const createSwimlaneNodes = (
         zIndex: -1,
         boxShadow: "#000000",
         borderRadius: "8px",
+        backgroundColor: "#0d8a93",
+        color: "white",
+
         textAlign:
           rankDirection === "TB" ? ("left" as const) : ("center" as const),
       },
