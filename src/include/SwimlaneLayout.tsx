@@ -152,7 +152,6 @@ const createSwimlaneNodes = (
         borderRadius: "8px",
         backgroundColor: "#0d8a93",
         color: "white",
-
         textAlign:
           rankDirection === "TB" ? ("left" as const) : ("center" as const),
       },
