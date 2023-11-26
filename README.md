@@ -1,12 +1,12 @@
-# Getting Started with Create React App
+# Project - Implement Swimlane flow chart with `Reactflow`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is building Swimlane flowchart based on ReactFlow and `Dagre` alogrithm. It contains below features:
 
-## Available Scripts
+- auto layout based on DAG Dagre algorithm.
+- auto change edge path if there is intermediate node.
+- supports change layout `Top to Bottom` and `Left to Right`
 
-In the project directory, you can run:
-
-### `npm start`
+# Start project `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3005](http://localhost:3005) to view it in the browser.
@@ -14,33 +14,210 @@ Open [http://localhost:3005](http://localhost:3005) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+# `Data Schema`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```json
+{
+    "id": "object id",
+    "swimlanes": [
+        {
+            "id": "swimlane obj",
+            "layer": 0,  <=swimlane layer order
+            "label": "swimlane label, will display in flowchat",
+            "nodes": [
+                {
+                    "id": "nodes id",
+                    "name": "node name",
+                    "label": "node label, will display in flowchart"
+                },
+            ],
+            "edges": [
+                {
+                    "id": "edge id",
+                    "sourceNodeId": "source node id",
+                    "targetNodeId": "target node id"
+                }
+            ]
+        }
+    ]
+}
+```
 
-### `npm run build`
+# Samples
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Simple swimlane
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```json
+{
+  "id": "Sample 2",
+  "swimlanes": [
+    {
+      "id": "S21",
+      "layer": 0,
+      "label": "Swimlane 21",
+      "nodes": [
+        {
+          "id": "S21-1",
+          "name": "Node S211",
+          "label": "Node S211",
+          "code": "NODES211"
+        }
+      ]
+    },
+    {
+      "id": "S22",
+      "label": "Swimlane 22",
+      "layer": 1,
+      "nodes": [
+        {
+          "id": "S22-1",
+          "name": "Node S221",
+          "label": "Node S221",
+          "code": "NODES221"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "S211-S221",
+      "sourceNodeId": "S21-1",
+      "targetNodeId": "S22-1"
+    }
+  ]
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![](./images/Sample2.png)
 
-### `npm run eject`
+## Swimlane mindmap
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```json
+{
+  "id": "Sample 3",
+  "swimlanes": [
+    {
+      "id": "S3-1",
+      "label": "Mindmap Root",
+      "layer": 0,
+      "nodes": [
+        {
+          "id": "S3-1-M1",
+          "label": "Root",
+          "code": "ROOT"
+        }
+      ]
+    },
+    {
+      "id": "S3-2",
+      "label": "Mindmap Level 1",
+      "layer": 1,
+      "nodes": [
+        {
+          "id": "S3-2-M1",
+          "label": "Child 1",
+          "code": "CHILD1"
+        },
+        {
+          "id": "S3-2-M2",
+          "label": "Child 2",
+          "code": "CHILD2"
+        }
+      ]
+    },
+    {
+      "id": "S3-3",
+      "label": "Mindmap Level 2",
+      "layer": 2,
+      "nodes": [
+        {
+          "id": "S3-3-M1",
+          "label": "Child 1",
+          "code": "CHILD1"
+        },
+        {
+          "id": "S3-3-M2",
+          "label": "Child 2",
+          "code": "CHILD2"
+        },
+        {
+          "id": "S3-3-M3",
+          "label": "Child 3",
+          "code": "CHILD4"
+        },
+        {
+          "id": "S3-3-M4",
+          "label": "Child 4",
+          "code": "CHILD4"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "E-S3-1-M1-S3-2-M1",
+      "sourceNodeId": "S3-1-M1",
+      "targetNodeId": "S3-2-M1"
+    },
+    {
+      "id": "E-S3-1-M1-S3-2-M2",
+      "sourceNodeId": "S3-1-M1",
+      "targetNodeId": "S3-2-M2"
+    },
+    //
+    {
+      "id": "E-S3-2-M1-S3-3-M1",
+      "sourceNodeId": "S3-2-M1",
+      "targetNodeId": "S3-3-M1"
+    },
+    {
+      "id": "E-S3-2-M1-S3-3-M2",
+      "sourceNodeId": "S3-2-M1",
+      "targetNodeId": "S3-3-M2"
+    },
+    {
+      "id": "E-S3-2-M1-S3-3-M3",
+      "sourceNodeId": "S3-2-M1",
+      "targetNodeId": "S3-3-M3"
+    },
+    {
+      "id": "E-S3-2-M1-S3-3-M4",
+      "sourceNodeId": "S3-2-M1",
+      "targetNodeId": "S3-3-M4"
+    },
+    {
+      "id": "E-S3-2-M2-S3-3-M3",
+      "sourceNodeId": "S3-2-M2",
+      "targetNodeId": "S3-3-M3"
+    },
+    {
+      "id": "E-S3-2-M2-S3-3-M4",
+      "sourceNodeId": "S3-2-M2",
+      "targetNodeId": "S3-3-M4"
+    },
+    {
+      "id": "E-S3-2-M2-S3-3-M2",
+      "sourceNodeId": "S3-2-M2",
+      "targetNodeId": "S3-3-M2"
+    },
+    {
+      "id": "E-S3-2-M2-S3-3-M1",
+      "sourceNodeId": "S3-2-M2",
+      "targetNodeId": "S3-3-M1"
+    },
+    {
+      "id": "E-S3-3-M3-S3-1-M1",
+      "targetNodeId": "S3-3-M3",
+      "sourceNodeId": "S3-1-M1"
+    },
+    {
+      "id": "E-S3-3-M2-S3-1-M1",
+      "targetNodeId": "S3-3-M2",
+      "sourceNodeId": "S3-1-M1"
+    }
+  ]
+}
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](./images/Sample3-LR.png)
+![](./images/Sample3-TB.png)
