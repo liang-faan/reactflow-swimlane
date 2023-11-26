@@ -11,6 +11,8 @@ import ReactFlow, {
 import { SwimlaneFlowInput } from "../include/swimlane-flow-types";
 import { Button } from "@mui/material";
 
+const proOptions = { hideAttribution: true };
+
 const SwimlaneFlow = (props: {
   rankDirection: string;
   selectedFlow: SwimlaneFlowInput | null | undefined;
@@ -42,6 +44,7 @@ const SwimlaneFlow = (props: {
       edges={reactflowEdges}
       fitView
       connectionMode={ConnectionMode.Loose}
+      proOptions={proOptions}
     >
       <Panel position="top-right">
         <Button
