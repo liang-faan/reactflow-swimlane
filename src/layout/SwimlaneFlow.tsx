@@ -11,7 +11,7 @@ import ReactFlow, {
 import { SwimlaneFlowInput } from "../include/swimlane-flow-types";
 import { Button } from "@mui/material";
 import CustomNode from "../include/CustomNode";
-import { SwimlaneEdge } from "../include/SwimlaneEdge";
+import SwimlaneEdge from "../include/SwimlaneEdge";
 
 const proOptions = { hideAttribution: true };
 

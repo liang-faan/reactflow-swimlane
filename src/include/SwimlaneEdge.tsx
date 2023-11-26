@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 import {
   useStore,
   getBezierPath,
@@ -7,7 +7,7 @@ import {
 } from "reactflow";
 import { getEdgeParams, getSwimlaneCurvePath } from "../utils/Utils";
 
-export function SwimlaneEdge(props: any) {
+export default memo((props: any) => {
   const { id, source, target, markerEnd, style } = props;
   const sourceNode = useStore(
     useCallback((store) => store.nodeInternals.get(source), [source])
@@ -52,4 +52,4 @@ export function SwimlaneEdge(props: any) {
       style={style}
     />
   );
-}
+});
