@@ -10,8 +10,18 @@ import ReactFlow, {
 } from "reactflow";
 import { SwimlaneFlowInput } from "../include/swimlane-flow-types";
 import { Button } from "@mui/material";
+import CustomNode from "../include/CustomNode";
+import { SwimlaneEdge } from "../include/SwimlaneEdge";
 
 const proOptions = { hideAttribution: true };
+
+const nodeTypes = {
+  custom: CustomNode,
+};
+
+const edgeTypes = {
+  swimlane: SwimlaneEdge,
+};
 
 const SwimlaneFlow = (props: {
   rankDirection: string;
@@ -42,6 +52,8 @@ const SwimlaneFlow = (props: {
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       edges={reactflowEdges}
+      nodeTypes={nodeTypes}
+      edgeTypes={edgeTypes}
       fitView
       connectionMode={ConnectionMode.Loose}
       proOptions={proOptions}

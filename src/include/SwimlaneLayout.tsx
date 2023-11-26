@@ -27,13 +27,17 @@ const convertSwimlaneNodesToReactflowNode = (
           height: nodeHeight,
           style: {
             borderRadius: "8px",
+            width: nodeWidth,
+            height: nodeHeight,
+            boxShadow: "#000000",
+            backgroundColor: "#fffa93",
+            textAlign: "center",
           },
           layer: layer,
         };
       });
     })
     .flatMap((n) => n);
-  console.info(nodes);
   return nodes;
 };
 
@@ -58,6 +62,7 @@ const convertSwimlaneEdgesToReactflowEdge = (
       },
       sourceLayer: sourceNode.layer,
       targetLayer: targetNode.layer,
+      type: "swimlane",
     };
   });
   return convertedEdges;
@@ -129,6 +134,7 @@ const createSwimlaneNodes = (
       id: sw.id,
       data: {
         label: sw.label,
+        isSwimlane: true,
       },
       draggable: false,
       position: {
@@ -152,6 +158,7 @@ const createSwimlaneNodes = (
         borderRadius: "8px",
         backgroundColor: "#0d8a93",
         color: "white",
+        fontSize: "1.25rem",
         textAlign:
           rankDirection === "TB" ? ("left" as const) : ("center" as const),
       },
@@ -166,7 +173,7 @@ const getGraphNodesEdges = (
 ) => {
   const { g, nodes, edges } = createGraph(rankDirection, swimlaneFlowInputs);
 
-  const nodesWithPosition: ReactflowNode[] = nodes.map((nd: any, index) => {
+  const nodesWithPosition: ReactflowNode[] = nodes.map((nd: any) => {
     const graphNode = g.node(nd.id);
     let node: ReactflowNode = {
       ...nd,
@@ -174,7 +181,7 @@ const getGraphNodesEdges = (
         x: graphNode.x,
         y: graphNode.y + (rankDirection === "TB" ? nodeHeight / 2 : nodeHeight),
       },
-      // type: "custom"
+      type: "custom",
     };
     return node;
   });

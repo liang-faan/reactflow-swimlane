@@ -1,14 +1,14 @@
 export interface BasicObject {
   id: string;
   name?: string;
-  label?: string;
 }
 
 export interface SwimlaneNode extends BasicObject {
   defaultColor?: string;
-  code: string;
+  code?: string;
+  label: string;
 }
-export interface Swimlane extends BasicObject {
+export interface Swimlane extends SwimlaneNode {
   nodes: SwimlaneNode[] | [];
   layer: number;
 }
@@ -22,3 +22,11 @@ export interface SwimlaneFlowInput extends BasicObject {
   swimlanes: Swimlane[] | [];
   edges: FlowEdge[] | [];
 }
+
+export type SpecialPathParams = {
+  sourceX: number;
+  sourceY: number;
+  targetX: number;
+  targetY: number;
+  offset: number;
+};

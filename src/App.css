@@ -57,5 +57,26 @@
 }
 
 .Panel-Button {
-  /* background-color: aquamarine; */
+  margin-right: 2px;
+}
+
+.react-flow__handle {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  min-width: 5px;
+  min-height: 5px;
+  width: 6px;
+  height: 6px;
+  background: #1a192b;
+  border: 0px solid white;
+  border-radius: 100%;
+}
+
+.react-flow__edge-path,
+.react-flow__connection-path {
+  /* stroke: #b1b1b7; */
+  stroke: #959b9d;
+  stroke-width: 4;
+  fill: none;
 }

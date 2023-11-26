@@ -376,6 +376,7 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
       {
         id: "S21",
         layer: 0,
+        label: "Swimlane 21",
         nodes: [
           {
             id: "S21-1",
@@ -387,6 +388,7 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
       },
       {
         id: "S22",
+        label: "Swimlane 22",
         layer: 1,
         nodes: [
           {
@@ -403,6 +405,130 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         id: "S211-S221",
         sourceNodeId: "S21-1",
         targetNodeId: "S22-1",
+      },
+    ],
+  },
+  {
+    id: "Sample 3",
+    swimlanes: [
+      {
+        id: "S3-1",
+        label: "Mindmap Root",
+        layer: 0,
+        nodes: [
+          {
+            id: "S3-1-M1",
+            label: "Root",
+            code: "ROOT",
+          },
+        ],
+      },
+      {
+        id: "S3-2",
+        label: "Mindmap Level 1",
+        layer: 1,
+        nodes: [
+          {
+            id: "S3-2-M1",
+            label: "Child 1",
+            code: "CHILD1",
+          },
+          {
+            id: "S3-2-M2",
+            label: "Child 2",
+            code: "CHILD2",
+          },
+        ],
+      },
+      {
+        id: "S3-3",
+        label: "Mindmap Level 2",
+        layer: 2,
+        nodes: [
+          {
+            id: "S3-3-M1",
+            label: "Child 1",
+            code: "CHILD1",
+          },
+          {
+            id: "S3-3-M2",
+            label: "Child 2",
+            code: "CHILD2",
+          },
+          {
+            id: "S3-3-M3",
+            label: "Child 3",
+            code: "CHILD4",
+          },
+          {
+            id: "S3-3-M4",
+            label: "Child 4",
+            code: "CHILD4",
+          },
+        ],
+      },
+    ],
+    edges: [
+      {
+        id: "E-S3-1-M1-S3-2-M1",
+        sourceNodeId: "S3-1-M1",
+        targetNodeId: "S3-2-M1",
+      },
+      {
+        id: "E-S3-1-M1-S3-2-M2",
+        sourceNodeId: "S3-1-M1",
+        targetNodeId: "S3-2-M2",
+      },
+      //
+      {
+        id: "E-S3-2-M1-S3-3-M1",
+        sourceNodeId: "S3-2-M1",
+        targetNodeId: "S3-3-M1",
+      },
+      {
+        id: "E-S3-2-M1-S3-3-M2",
+        sourceNodeId: "S3-2-M1",
+        targetNodeId: "S3-3-M2",
+      },
+      {
+        id: "E-S3-2-M1-S3-3-M3",
+        sourceNodeId: "S3-2-M1",
+        targetNodeId: "S3-3-M3",
+      },
+      {
+        id: "E-S3-2-M1-S3-3-M4",
+        sourceNodeId: "S3-2-M1",
+        targetNodeId: "S3-3-M4",
+      },
+      {
+        id: "E-S3-2-M2-S3-3-M3",
+        sourceNodeId: "S3-2-M2",
+        targetNodeId: "S3-3-M3",
+      },
+      {
+        id: "E-S3-2-M2-S3-3-M4",
+        sourceNodeId: "S3-2-M2",
+        targetNodeId: "S3-3-M4",
+      },
+      {
+        id: "E-S3-2-M2-S3-3-M2",
+        sourceNodeId: "S3-2-M2",
+        targetNodeId: "S3-3-M2",
+      },
+      {
+        id: "E-S3-2-M2-S3-3-M1",
+        sourceNodeId: "S3-2-M2",
+        targetNodeId: "S3-3-M1",
+      },
+      {
+        id: "E-S3-3-M3-S3-1-M1",
+        targetNodeId: "S3-3-M3",
+        sourceNodeId: "S3-1-M1",
+      },
+      {
+        id: "E-S3-3-M2-S3-1-M1",
+        targetNodeId: "S3-3-M2",
+        sourceNodeId: "S3-1-M1",
       },
     ],
   },
