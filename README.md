@@ -6,6 +6,9 @@ This is building Swimlane flowchart based on ReactFlow and `Dagre` alogrithm. It
 - auto change edge path if there is intermediate node.
 - supports change layout `Top to Bottom` and `Left to Right`
 
+![](./images/Sample1-LR.png)
+![](./images/Sample1-TB.png)
+
 # Start project `npm start`
 
 Runs the app in the development mode.\
