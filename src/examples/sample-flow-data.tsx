@@ -532,5 +532,122 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
       },
     ],
   },
+  {
+    id: "Loop Sample",
+    edges: [
+      {
+        id: "1",
+        sourceNodeId: "N1",
+        targetNodeId: "N2",
+      },
+      {
+        id: "2",
+        sourceNodeId: "N2",
+        targetNodeId: "N3",
+      },
+      {
+        id: "3",
+        sourceNodeId: "N3",
+        targetNodeId: "N4",
+      },
+      {
+        id: "4",
+        sourceNodeId: "N4",
+        targetNodeId: "N5",
+      },
+      {
+        id: "5",
+        sourceNodeId: "N5",
+        targetNodeId: "N6",
+      },
+      {
+        id: "6",
+        sourceNodeId: "N6",
+        targetNodeId: "N7",
+      },
+      {
+        id: "7",
+        sourceNodeId: "N7",
+        targetNodeId: "N8",
+      },
+      {
+        id: "8",
+        sourceNodeId: "N8",
+        targetNodeId: "N1",
+      },
+      // {
+      //   id: "9",
+      //   sourceNodeId: "N2",
+      //   targetNodeId: "N6",
+      // },
+      // {
+      //   id: "10",
+      //   sourceNodeId: "N7",
+      //   targetNodeId: "N3",
+      // },
+    ],
+    swimlanes: [
+      {
+        id: "1",
+        label: "Lan1",
+        layer: 0,
+        nodes: [
+          {
+            id: "N1",
+            label: "Start",
+          },
+          {
+            id: "N8",
+            label: "End",
+          },
+        ],
+      },
+      {
+        id: "2",
+        label: "Lan2",
+        layer: 1,
+        nodes: [
+          {
+            id: "N2",
+            label: "Station 1",
+          },
+          {
+            id: "N7",
+            label: "Station 6",
+          },
+        ],
+      },
+      {
+        id: "3",
+        label: "Lan3",
+        layer: 2,
+        nodes: [
+          {
+            id: "N3",
+            label: "Station 2",
+          },
+          {
+            id: "N6",
+            label: "Station 5",
+          },
+        ],
+      },
+      {
+        id: "4",
+        label: "Lan4",
+        layer: 3,
+        nodes: [
+          {
+            id: "N4",
+            label: "Station 3",
+          },
+          {
+            id: "N5",
+            label: "Station 4",
+          },
+        ],
+      },
+    ],
+  },
 ];
 export { SAMPLE_FLOW };
