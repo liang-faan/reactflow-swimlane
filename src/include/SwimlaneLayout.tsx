@@ -1,5 +1,5 @@
 import dagre from "@pinging/dagrejs";
-import { FlowEdge, SwimlaneFlowInput } from "./swimlane-flow-types";
+import { FlowEdge, SwimlaneFlowInput } from "../types/swimlane-flow-types";
 import { MarkerType, Node as ReactflowNode } from "reactflow";
 
 const nodeWidth = 140;

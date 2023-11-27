@@ -8,7 +8,7 @@ import ReactFlow, {
   useNodesState,
   useReactFlow,
 } from "reactflow";
-import { SwimlaneFlowInput } from "../include/swimlane-flow-types";
+import { SwimlaneFlowInput } from "../types/swimlane-flow-types";
 import { Button } from "@mui/material";
 import CustomNode from "../include/CustomNode";
 import SwimlaneEdge from "../include/SwimlaneEdge";

@@ -1,12 +1,32 @@
 {
-  "name": "reactflow-swimlane",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@liangfaan/reactflow-swimlane",
+  "version": "0.0.2",
+  "author": {
+    "name": "LIANG FAAN",
+    "email": "liang.faan@gmail.com",
+    "url": "https://github.com/liang-faan"
+  },
+  "private": false,
+  "keywords": [
+    "dagre",
+    "swimlane",
+    "reactflow",
+    "flowchart",
+    "auto layout",
+    "swimlane layout",
+    "typescript",
+    "DAG layout",
+    "reactflow swimlane"
+  ],
+  "bugs": {
+    "url": "https://github.com/liang-faan/reactflow-swimlane/issues"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.18",
     "@pinging/dagrejs": "^1.0.1",
+    "@rollup/plugin-image": "^3.0.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -25,7 +45,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "rollup": "rollup -c"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +65,36 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This is building Swimlane flowchart based on ReactFlow and `Dagre` alogrithm. It contains auto layout and auto adjust path.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup": "^4.6.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@mui/material": "^5.14.18",
+    "@pinging/dagrejs": "^1.0.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liang-faan/reactflow-swimlane.git"
+  },
+  "homepage": "https://github.com/liang-faan/reactflow-swimlane#readme"
 }

@@ -1,4 +1,4 @@
-import { SwimlaneFlowInput } from "../include/swimlane-flow-types";
+import { SwimlaneFlowInput } from "../types/swimlane-flow-types";
 const SAMPLE_FLOW: SwimlaneFlowInput[] = [
   {
     id: "sample 1",

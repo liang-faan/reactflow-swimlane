@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { ReactFlowProvider } from "reactflow";
 import { SAMPLE_FLOW } from "./examples/sample-flow-data";
-import { SwimlaneFlowInput } from "./include/swimlane-flow-types";
+import { SwimlaneFlowInput } from "./types/swimlane-flow-types";
 import SwimlaneFlow from "./layout/SwimlaneFlow";
 
 function App() {

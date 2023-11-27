@@ -5,7 +5,7 @@ import {
   Position,
   internalsSymbol,
 } from "reactflow";
-import { SpecialPathParams } from "../include/swimlane-flow-types";
+import { SpecialPathParams } from "../types/swimlane-flow-types";
 
 export function findIntermediateNode(
   sourceNode: Node,
