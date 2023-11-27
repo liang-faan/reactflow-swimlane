@@ -9,6 +9,155 @@ This is building Swimlane flowchart based on ReactFlow and `Dagre` alogrithm. It
   ![](./images/Sample1-LR.png)
   ![](./images/Sample1-TB.png)
 
+# Sample of how to use
+
+![](./images/Sample3-LR.png)
+
+```typescript
+import React from "react";
+import { SwimlaneFlow } from "@liangfaan/reactflow-swimlane";
+// wrap the component under ReactFlowProvider
+import { ReactFlowProvider } from "reactflow";
+import "./App.css";
+
+function App() {
+  return (
+    <div style={{ height: 800 }}>
+      <ReactFlowProvider>
+        <SwimlaneFlow
+          rankDirection="LR"
+          selectedFlow={{
+            id: "Sample 3",
+            swimlanes: [
+              {
+                id: "S3-1",
+                label: "Mindmap Root",
+                layer: 0,
+                nodes: [
+                  {
+                    id: "S3-1-M1",
+                    label: "Root",
+                    code: "ROOT",
+                  },
+                ],
+              },
+              {
+                id: "S3-2",
+                label: "Mindmap Level 1",
+                layer: 1,
+                nodes: [
+                  {
+                    id: "S3-2-M1",
+                    label: "Child 1",
+                    code: "CHILD1",
+                  },
+                  {
+                    id: "S3-2-M2",
+                    label: "Child 2",
+                    code: "CHILD2",
+                  },
+                ],
+              },
+              {
+                id: "S3-3",
+                label: "Mindmap Level 2",
+                layer: 2,
+                nodes: [
+                  {
+                    id: "S3-3-M1",
+                    label: "Child 1",
+                    code: "CHILD1",
+                  },
+                  {
+                    id: "S3-3-M2",
+                    label: "Child 2",
+                    code: "CHILD2",
+                  },
+                  {
+                    id: "S3-3-M3",
+                    label: "Child 3",
+                    code: "CHILD4",
+                  },
+                  {
+                    id: "S3-3-M4",
+                    label: "Child 4",
+                    code: "CHILD4",
+                  },
+                ],
+              },
+            ],
+            edges: [
+              {
+                id: "E-S3-1-M1-S3-2-M1",
+                sourceNodeId: "S3-1-M1",
+                targetNodeId: "S3-2-M1",
+              },
+              {
+                id: "E-S3-1-M1-S3-2-M2",
+                sourceNodeId: "S3-1-M1",
+                targetNodeId: "S3-2-M2",
+              },
+              {
+                id: "E-S3-2-M1-S3-3-M1",
+                sourceNodeId: "S3-2-M1",
+                targetNodeId: "S3-3-M1",
+              },
+              {
+                id: "E-S3-2-M1-S3-3-M2",
+                sourceNodeId: "S3-2-M1",
+                targetNodeId: "S3-3-M2",
+              },
+              {
+                id: "E-S3-2-M1-S3-3-M3",
+                sourceNodeId: "S3-2-M1",
+                targetNodeId: "S3-3-M3",
+              },
+              {
+                id: "E-S3-2-M1-S3-3-M4",
+                sourceNodeId: "S3-2-M1",
+                targetNodeId: "S3-3-M4",
+              },
+              {
+                id: "E-S3-2-M2-S3-3-M3",
+                sourceNodeId: "S3-2-M2",
+                targetNodeId: "S3-3-M3",
+              },
+              {
+                id: "E-S3-2-M2-S3-3-M4",
+                sourceNodeId: "S3-2-M2",
+                targetNodeId: "S3-3-M4",
+              },
+              {
+                id: "E-S3-2-M2-S3-3-M2",
+                sourceNodeId: "S3-2-M2",
+                targetNodeId: "S3-3-M2",
+              },
+              {
+                id: "E-S3-2-M2-S3-3-M1",
+                sourceNodeId: "S3-2-M2",
+                targetNodeId: "S3-3-M1",
+              },
+              {
+                id: "E-S3-3-M3-S3-1-M1",
+                targetNodeId: "S3-3-M3",
+                sourceNodeId: "S3-1-M1",
+              },
+              {
+                id: "E-S3-3-M2-S3-1-M1",
+                targetNodeId: "S3-3-M2",
+                sourceNodeId: "S3-1-M1",
+              },
+            ],
+          }}
+        />
+      </ReactFlowProvider>
+    </div>
+  );
+}
+
+export default App;
+```
+
 # Start project `npm start`
 
 Runs the app in the development mode.\
