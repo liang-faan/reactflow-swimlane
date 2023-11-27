@@ -20,7 +20,7 @@ import React from "react";
 import { SwimlaneFlow } from "@liangfaan/reactflow-swimlane";
 // wrap the component under ReactFlowProvider
 import { ReactFlowProvider } from "reactflow";
-import "./App.css";
+import "reactflow/dist/style.css";
 
 function App() {
   return (

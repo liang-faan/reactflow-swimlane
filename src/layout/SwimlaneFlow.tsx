@@ -63,13 +63,15 @@ const SwimlaneFlow = (props: {
           onClick={() => setRankDir("TB")}
           variant="contained"
           className="Panel-Button"
+          autoCapitalize="false"
         >
-          To to Bottom
+          Top to Bottom
         </Button>{" "}
         <Button
           onClick={() => setRankDir("LR")}
           variant="contained"
           className="Panel-Button"
+          autoCapitalize="false"
         >
           Left to Right
         </Button>
