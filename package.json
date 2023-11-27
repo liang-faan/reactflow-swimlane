@@ -78,7 +78,8 @@
     "rollup": "^4.6.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2"
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.69.5"
   },
   "license": "MIT",
   "peerDependencies": {
