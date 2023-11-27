@@ -11,7 +11,9 @@ This is building Swimlane flowchart based on ReactFlow and `Dagre` alogrithm. It
 
 # Sample of how to use
 
-![](./images/Sample3-LR.png)
+```shell
+npm install @liangfaan/reactflow-swimlane
+```
 
 ```typescript
 import React from "react";
@@ -157,6 +159,10 @@ function App() {
 
 export default App;
 ```
+
+## Output
+
+![](./images/Sample3-LR.png)
 
 # Start project `npm start`
 
