@@ -48,13 +48,13 @@ export default [
     plugins: [dts()],
     external: [/\.css$/], // telling rollup anything that is .css aren't part of type exports
   },
-  {
-    input: "src/App.css",
-    output: [{ file: "dist/swimlane-style.css" }],
-    plugins: [
-      postcss({
-        minimize: true,
-      }),
-    ],
-  },
+  // {
+  //   input: "src/App.css",
+  //   output: [{ file: "dist/swimlane-style.css" }],
+  //   plugins: [
+  //     postcss({
+  //       minimize: true,
+  //     }),
+  //   ],
+  // },
 ];
