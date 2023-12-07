@@ -15,6 +15,7 @@ const convertSwimlaneNodesToReactflowNode = (
 ) => {
   const { swimlanes } = swimlaneFlowInputs;
   const nodes: any[] = swimlanes
+    .sort((s1, s2) => s1.layer - s2.layer)
     .map((sl) => {
       const { layer, nodes } = sl;
       return nodes.map((n) => {
