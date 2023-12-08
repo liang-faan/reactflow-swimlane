@@ -96,7 +96,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/liang-faan/reactflow-swimlane.git"
+    "url": "git+https://github.com/liang-faan/reactflow-swimlane.git"
   },
   "homepage": "https://github.com/liang-faan/reactflow-swimlane#readme"
 }
