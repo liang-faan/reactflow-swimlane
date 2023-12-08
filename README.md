@@ -8,6 +8,11 @@ This is building Swimlane flowchart based on ReactFlow and `Dagre` alogrithm. It
   ![](./images/LoopSample.png)
   ![](./images/Sample1-LR.png)
   ![](./images/Sample1-TB.png)
+- **v0.1.1** Support Swimlane crosses multiple layers if nodes within same swimlane communicate each other.
+  **Before**
+  ![](./images/before_nodes_within_swimlane.png)
+  **After**
+  ![](./images/expand_nodes_within_swimlane.png)
 
 # Sample of how to use
 
@@ -378,3 +383,5 @@ You will also see any lint errors in the console.
 
 ![](./images/Sample3-LR.png)
 ![](./images/Sample3-TB.png)
+
+## Split into multiple layers for Nodes communicate within same Swimlane.
