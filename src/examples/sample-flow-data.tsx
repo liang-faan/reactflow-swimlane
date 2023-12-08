@@ -368,6 +368,46 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         sourceNodeId: "F6",
         targetNodeId: "G4",
       },
+      {
+        id: "edgeD2-D5",
+        sourceNodeId: "D2",
+        targetNodeId: "D5",
+      },
+      {
+        id: "edgeD2-D4",
+        sourceNodeId: "D2",
+        targetNodeId: "D4",
+      },
+      {
+        id: "edgeD2-D6",
+        sourceNodeId: "D2",
+        targetNodeId: "D6",
+      },
+      {
+        id: "edgeC4-D3",
+        sourceNodeId: "C4",
+        targetNodeId: "D3",
+      },
+      {
+        id: "edgeD3-D4",
+        sourceNodeId: "D3",
+        targetNodeId: "D4",
+      },
+      {
+        id: "edgeD3-D5",
+        sourceNodeId: "D3",
+        targetNodeId: "D5",
+      },
+      {
+        id: "edgeD5-F5",
+        sourceNodeId: "D5",
+        targetNodeId: "F5",
+      },
+      {
+        id: "edgeD5-F4",
+        sourceNodeId: "D5",
+        targetNodeId: "F4",
+      },
     ],
   },
   {
