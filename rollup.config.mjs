@@ -10,7 +10,7 @@ import packageJson from "./package.json" assert { type: "json" };
 
 export default [
   {
-    input: "./src/index.ts",
+    input: "./src/swimlane_module.ts",
     output: [
       // {
       //   file: packageJson.main,
@@ -48,13 +48,13 @@ export default [
     plugins: [dts()],
     external: [/\.css$/], // telling rollup anything that is .css aren't part of type exports
   },
-  // {
-  //   input: "src/App.css",
-  //   output: [{ file: "dist/swimlane-style.css" }],
-  //   plugins: [
-  //     postcss({
-  //       minimize: true,
-  //     }),
-  //   ],
-  // },
+  {
+    input: "src/App.css",
+    output: [{ file: "dist/swimlane-style.css" }],
+    plugins: [
+      postcss({
+        minimize: true,
+      }),
+    ],
+  },
 ];

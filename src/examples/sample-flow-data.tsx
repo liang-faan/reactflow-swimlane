@@ -368,6 +368,46 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         sourceNodeId: "F6",
         targetNodeId: "G4",
       },
+      {
+        id: "edgeD2-D5",
+        sourceNodeId: "D2",
+        targetNodeId: "D5",
+      },
+      {
+        id: "edgeD2-D4",
+        sourceNodeId: "D2",
+        targetNodeId: "D4",
+      },
+      {
+        id: "edgeD2-D6",
+        sourceNodeId: "D2",
+        targetNodeId: "D6",
+      },
+      {
+        id: "edgeC4-D3",
+        sourceNodeId: "C4",
+        targetNodeId: "D3",
+      },
+      {
+        id: "edgeD3-D4",
+        sourceNodeId: "D3",
+        targetNodeId: "D4",
+      },
+      {
+        id: "edgeD3-D5",
+        sourceNodeId: "D3",
+        targetNodeId: "D5",
+      },
+      {
+        id: "edgeD5-F5",
+        sourceNodeId: "D5",
+        targetNodeId: "F5",
+      },
+      {
+        id: "edgeD5-F4",
+        sourceNodeId: "D5",
+        targetNodeId: "F4",
+      },
     ],
   },
   {
@@ -646,6 +686,124 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
             label: "Station 4",
           },
         ],
+      },
+    ],
+  },
+  {
+    id: "Swimlane Covers Multi-layers",
+    swimlanes: [
+      {
+        id: "Swimlane-1",
+        label: "Swimlane 1",
+        layer: 0,
+        nodes: [
+          {
+            id: "SCM-N-1",
+            label: "SCM-Node-1",
+            defaultColor: "white",
+          },
+        ],
+      },
+      {
+        id: "Swimlane-2",
+        label: "Swimlane 2",
+        layer: 1,
+        nodes: [
+          {
+            id: "SCM-N-2",
+            label: "SCM-Node-2",
+            defaultColor: "yellow",
+          },
+          {
+            id: "SCM-N-3",
+            label: "SCM-Node-3",
+            defaultColor: "yellow",
+          },
+          {
+            id: "SCM-N-4",
+            label: "SCM-Node-4",
+            defaultColor: "yellow",
+          },
+          {
+            id: "SCM-N-5",
+            label: "SCM-Node-5",
+            defaultColor: "yellow",
+          },
+        ],
+      },
+      {
+        id: "Swimlane-3",
+        label: "Swimlane 3",
+        layer: 2,
+        nodes: [
+          {
+            id: "SCM-N-6",
+            label: "SCM-Node-6",
+            defaultColor: "yellow",
+          },
+          {
+            id: "SCM-N-7",
+            label: "SCM-Node-7",
+            defaultColor: "yellow",
+          },
+          {
+            id: "SCM-N-8",
+            label: "SCM-Node-8",
+            defaultColor: "yellow",
+          },
+          {
+            id: "SCM-N-9",
+            label: "SCM-Node-9",
+            defaultColor: "yellow",
+          },
+        ],
+      },
+    ],
+    edges: [
+      {
+        id: "SCM-N-1-2",
+        sourceNodeId: "SCM-N-1",
+        targetNodeId: "SCM-N-2",
+      },
+      {
+        id: "SCM-N-2-3",
+        sourceNodeId: "SCM-N-2",
+        targetNodeId: "SCM-N-3",
+      },
+      {
+        id: "SCM-N-2-4",
+        sourceNodeId: "SCM-N-2",
+        targetNodeId: "SCM-N-4",
+      },
+      {
+        id: "SCM-N-3-5",
+        sourceNodeId: "SCM-N-3",
+        targetNodeId: "SCM-N-5",
+      },
+      {
+        id: "SCM-N-4-5",
+        sourceNodeId: "SCM-N-4",
+        targetNodeId: "SCM-N-5",
+      },
+      {
+        id: "SCM-N-5-6",
+        sourceNodeId: "SCM-N-5",
+        targetNodeId: "SCM-N-6",
+      },
+      {
+        id: "SCM-N-6-7",
+        sourceNodeId: "SCM-N-6",
+        targetNodeId: "SCM-N-7",
+      },
+      {
+        id: "SCM-N-6-8",
+        sourceNodeId: "SCM-N-6",
+        targetNodeId: "SCM-N-8",
+      },
+      {
+        id: "SCM-N-6-9",
+        sourceNodeId: "SCM-N-6",
+        targetNodeId: "SCM-N-9",
       },
     ],
   },

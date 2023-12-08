@@ -1,1 +1,3 @@
-export { default } from "./SwimlaneLayout";
+export * from "./SwimlaneLayout";
+export * from "./CustomNode";
+export * from "./SwimlaneEdge";

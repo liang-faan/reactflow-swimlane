@@ -1,6 +1,6 @@
 {
   "name": "@liangfaan/reactflow-swimlane",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "author": {
     "name": "LIANG FAAN",
     "email": "liang.faan@gmail.com",
@@ -16,7 +16,8 @@
     "swimlane layout",
     "typescript",
     "DAG layout",
-    "reactflow swimlane"
+    "reactflow swimlane",
+    "react diagram"
   ],
   "bugs": {
     "url": "https://github.com/liang-faan/reactflow-swimlane/issues"
@@ -43,6 +44,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "local_start": "PUBLIC_URL=/ react-scripts start",
+    "local_build": "PUBLIC_URL=/ react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -70,6 +73,7 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -86,9 +90,6 @@
     "@mui/material": "^5.14.18",
     "@pinging/dagrejs": "^1.0.1"
   },
-  "files": [
-    "dist"
-  ],
   "engines": {
     "node": ">=16"
   },
