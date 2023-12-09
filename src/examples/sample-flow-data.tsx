@@ -699,7 +699,7 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         nodes: [
           {
             id: "SCM-N-1",
-            label: "SCM-Node-1",
+            label: "SCM-N-1",
             defaultColor: "white",
           },
         ],
@@ -711,22 +711,22 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         nodes: [
           {
             id: "SCM-N-2",
-            label: "SCM-Node-2",
+            label: "SCM-N-2",
             defaultColor: "yellow",
           },
           {
             id: "SCM-N-3",
-            label: "SCM-Node-3",
+            label: "SCM-N-3",
             defaultColor: "yellow",
           },
           {
             id: "SCM-N-4",
-            label: "SCM-Node-4",
+            label: "SCM-N-4",
             defaultColor: "yellow",
           },
           {
             id: "SCM-N-5",
-            label: "SCM-Node-5",
+            label: "SCM-N-5",
             defaultColor: "yellow",
           },
         ],
@@ -738,22 +738,22 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         nodes: [
           {
             id: "SCM-N-6",
-            label: "SCM-Node-6",
+            label: "SCM-N-6",
             defaultColor: "yellow",
           },
           {
             id: "SCM-N-7",
-            label: "SCM-Node-7",
+            label: "SCM-N-7",
             defaultColor: "yellow",
           },
           {
             id: "SCM-N-8",
-            label: "SCM-Node-8",
+            label: "SCM-N-8",
             defaultColor: "yellow",
           },
           {
             id: "SCM-N-9",
-            label: "SCM-Node-9",
+            label: "SCM-N-9",
             defaultColor: "yellow",
           },
         ],
@@ -776,20 +776,30 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         targetNodeId: "SCM-N-4",
       },
       {
-        id: "SCM-N-3-5",
+        id: "SCM-N-2-5",
+        sourceNodeId: "SCM-N-2",
+        targetNodeId: "SCM-N-5",
+      },
+      // {
+      //   id: "SCM-N-5-6",
+      //   sourceNodeId: "SCM-N-5",
+      //   targetNodeId: "SCM-N-6",
+      // },
+      {
+        id: "SCM-N-3-6",
         sourceNodeId: "SCM-N-3",
-        targetNodeId: "SCM-N-5",
-      },
-      {
-        id: "SCM-N-4-5",
-        sourceNodeId: "SCM-N-4",
-        targetNodeId: "SCM-N-5",
-      },
-      {
-        id: "SCM-N-5-6",
-        sourceNodeId: "SCM-N-5",
         targetNodeId: "SCM-N-6",
       },
+      // {
+      //   id: "SCM-N-4-6",
+      //   sourceNodeId: "SCM-N-4",
+      //   targetNodeId: "SCM-N-6",
+      // },
+      // {
+      //   id: "SCM-N-5-6",
+      //   sourceNodeId: "SCM-N-5",
+      //   targetNodeId: "SCM-N-6",
+      // },
       {
         id: "SCM-N-6-7",
         sourceNodeId: "SCM-N-6",
@@ -804,6 +814,16 @@ const SAMPLE_FLOW: SwimlaneFlowInput[] = [
         id: "SCM-N-6-9",
         sourceNodeId: "SCM-N-6",
         targetNodeId: "SCM-N-9",
+      },
+      {
+        id: "SCM-N-3-6",
+        sourceNodeId: "SCM-N-3",
+        targetNodeId: "SCM-N-6",
+      },
+      {
+        id: "SCM-N-7-1",
+        sourceNodeId: "SCM-N-7",
+        targetNodeId: "SCM-N-1",
       },
     ],
   },
