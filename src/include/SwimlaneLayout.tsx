@@ -14,19 +14,29 @@ const chainEdgeSourceAndTarget = (
   currentSourceNodeId: string,
   edges: (FlowEdge | undefined)[]
 ): string[][] => {
-  const subEdges = edges.filter((e) => e!.sourceNodeId === currentSourceNodeId);
-  if (!subEdges) {
-    return [];
+  const subPaths: string[][] = [];
+  const visitedNodes = new Set<string>(); // Keep track of visited nodes to avoid cycles
+  // Create a stack to perform depth-first traversal iteratively
+  const stack: { nodeId: string; path: string[] }[] = [{ nodeId: currentSourceNodeId, path: [] }];
+  while (stack.length > 0) {
+    const { nodeId, path } = stack.pop()!;
+    visitedNodes.add(nodeId);
+    const currentSubPaths: string[] = [];
+    for (const edge of edges) {
+      if (edge?.sourceNodeId === nodeId) {
+        currentSubPaths.push(edge.targetNodeId);
+      }
+    }
+    if (currentSubPaths.length > 0) {
+      for (const targetNodeId of currentSubPaths) {
+        if (!visitedNodes.has(targetNodeId)) {
+          stack.push({ nodeId: targetNodeId, path: [...path, nodeId] });
+        }
+      }
+    } else {
+      subPaths.push([...path, nodeId]); // Add a single-node path if no outgoing edges found
+    }
   }
-  const subPaths = subEdges.map((sp) => {
-    const subSubPaths = chainEdgeSourceAndTarget(sp!.targetNodeId, edges);
-    const chainedSubPath = subSubPaths.flatMap((ssp) => ssp);
-    if (!chainedSubPath.includes(sp!.targetNodeId))
-      chainedSubPath.unshift(sp!.targetNodeId);
-    if (!chainedSubPath.includes(sp!.sourceNodeId))
-      chainedSubPath.unshift(sp!.sourceNodeId);
-    return chainedSubPath;
-  });
   return subPaths;
 };
 
